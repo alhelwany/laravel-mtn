@@ -6,6 +6,7 @@ use Alhelwany\LaravelMtn\Enums\Lang;
 
 interface MTNNotification
 {
-	public function toText() : string;
-	public function getLang() : Lang;
+    public function toText(): string;
+
+    public function getLang(): Lang;
 }
