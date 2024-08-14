@@ -40,22 +40,21 @@ use Alhelwany\LaravelMtn\Interfaces\MTNNotification;
 use Illuminate\Notifications\Notification;
 use Alhelwany\LaravelMtn\Channels\MTNChannel;
 
-class MyNotification extends Notification implements MTNNotification{
+class MyNotification extends Notification implements MTNNotification
+{
 	
-	public function via(object $notifiable): array
+    public function via(object $notifiable): array
     {
         return [MTNChannel::class];
     }
-
-	public function toText(): string
-	{
-		reutrn "Hello";
-	}
-
+    public function toText(): string
+    {
+        return "Hello";
+    }
     public function getLang(): Lang
-	{
-		return Lang::EN;
-	}
+    {
+        return Lang::EN;
+    }
 }
 ```
 
@@ -64,17 +63,17 @@ class MyNotification extends Notification implements MTNNotification{
 use Illuminate\Database\Eloquent\Model;
 use Alhelwany\LaravelMtn\Interfaces\MTNNotifiable;
 
-class User extends Model implements MTNNotifiable{
-
-	public function getPhone(): string
-	{
-		return $this->phone;
-	}
+class User extends Model implements MTNNotifiable
+{
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
 }
 ```
 
 ```php
-	$user->notify(new MyNotification);
+$user->notify(new MyNotification);
 ```
 
 
