@@ -1,12 +1,12 @@
 {
-    "name": "115778766-alhelwany/laravel-mtn",
+    "name": "alhelwany/laravel-mtn",
     "description": "A simple Laravel notification Channel that utilizes MTN Syria services to send SMS",
     "keywords": [
         "Alhelwany",
         "laravel",
         "laravel-mtn"
     ],
-    "homepage": "https://github.com/115778766-alhelwany/laravel-mtn",
+    "homepage": "https://github.com/alhelwany/laravel-mtn",
     "license": "MIT",
     "authors": [
         {
