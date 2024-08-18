@@ -5,6 +5,7 @@ namespace Alhelwany\LaravelMtn;
 use Alhelwany\LaravelMtn\Enums\Lang;
 use Alhelwany\LaravelMtn\Exceptions\InvalidConfigurationException;
 use Alhelwany\LaravelMtn\Utilities\HttpClient;
+use Alhelwany\LaravelMtn\Utilities\MessageEncoder;
 use Alhelwany\LaravelMtn\Utilities\PhoneFormatter;
 use Illuminate\Support\Facades\Log;
 
@@ -14,10 +15,13 @@ class MTNClient
 
     private HttpClient $httpClient;
 
+	private MessageEncoder $messageEncoder;
+
     public function __construct(string $url, string $username, string $password, string $from)
     {
         $this->phoneFormatter = new PhoneFormatter;
         $this->httpClient = new HttpClient($url, $username, $password, $from);
+		$this->messageEncoder = new MessageEncoder
     }
 
     /**
@@ -59,7 +63,7 @@ class MTNClient
     {
         $response = $this->httpClient->sendRequest(
             $this->phoneFormatter->formatMany($phone),
-            $text,
+            $this->messageEncoder->encode($text, $lang),
             $lang->value
         );
 
