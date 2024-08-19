@@ -15,13 +15,13 @@ class MTNClient
 
     private HttpClient $httpClient;
 
-	private MessageEncoder $messageEncoder;
+    private MessageEncoder $messageEncoder;
 
     public function __construct(string $url, string $username, string $password, string $from)
     {
         $this->phoneFormatter = new PhoneFormatter;
         $this->httpClient = new HttpClient($url, $username, $password, $from);
-		$this->messageEncoder = new MessageEncoder;
+        $this->messageEncoder = new MessageEncoder;
     }
 
     /**
