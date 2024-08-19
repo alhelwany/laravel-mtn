@@ -21,7 +21,7 @@ class MTNClient
     {
         $this->phoneFormatter = new PhoneFormatter;
         $this->httpClient = new HttpClient($url, $username, $password, $from);
-		$this->messageEncoder = new MessageEncoder
+		$this->messageEncoder = new MessageEncoder;
     }
 
     /**
