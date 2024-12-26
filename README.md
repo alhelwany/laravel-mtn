@@ -18,7 +18,7 @@ composer require alhelwany/laravel-mtn
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-mtn-config"
+php artisan vendor:publish --tag="mtn-config"
 ```
 
 This is the contents of the published config file:
